@@ -1,0 +1,14 @@
+version: "3"
+services:
+  pitemp:
+    hostname: pitemp
+    container_name: pitemp
+    build: .
+    devices:
+       - /dev/gpiochip0:/dev/gpiochip0
+    environment:
+       - 'TZ=Europe/Amsterdam'
+
+    networks:
+      - default
+    restart: always
