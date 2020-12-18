@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: docker-RPi4_DHT22-image
+  IMAGE_NAME: docker-rpi4_dht22-image
 
 jobs:
   # Run tests.
