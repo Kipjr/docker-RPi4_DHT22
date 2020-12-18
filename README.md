@@ -1,3 +1,4 @@
+![Docker](https://github.com/Kipjr/docker-RPi4_DHT22/workflows/Docker/badge.svg)
 # docker-RPi4_DHT22
 
 ## Install instructions
