@@ -11,4 +11,5 @@ RUN apt-get update -y && apt-get install -y \
 COPY ./config .
 
 #ENTRYPOINT ["tail", "-f", "/dev/null"] #debug only
-CMD [ "python3", "./google_spreadsheet.py" ]
+#CMD [ "python3", "./google_spreadsheet.py" ]
+CMD [ "sh", "./start.sh" ]

@@ -1,8 +1,18 @@
 version: "3"
+
+networks:
+  net:
+    driver: bridge
+    ipam:    
+     driver: default
+     config:
+       - subnet: 192.168.8.48/30 #192.168.8.49 - 192.168.8.50 (bc:51)
+    driver_opts:
+     com.docker.network.bridge.name: rpi4_gpio_net
 services:
-  pitemp:
-    hostname: pitemp
-    container_name: pitemp
+  rpi4-gpio:
+    hostname: rpi4-gpio
+    container_name: rpi4-gpio
     build: .
     devices:
        - /dev/gpiochip0:/dev/gpiochip0
@@ -10,5 +20,5 @@ services:
        - 'TZ=Europe/Amsterdam'
 
     networks:
-      - default
+      - net
     restart: always
