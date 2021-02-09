@@ -16,9 +16,15 @@ services:
     build: .
     devices:
        - /dev/gpiochip0:/dev/gpiochip0
+       - /dev/gpiomem:/dev/gpiomem
     environment:
        - 'TZ=Europe/Amsterdam'
-
+    privileged: false
+    volumes:
+       - /sys/firmware/devicetree/base:/proc/device-tree
+       - /proc/cpuinfo:/proc/cpuinfo
+       - /sys/class/gpio:/sys/class/gpio
+       - ./data/:/usr/src/app/data
     networks:
       - net
     restart: always

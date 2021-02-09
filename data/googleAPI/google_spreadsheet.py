@@ -100,8 +100,14 @@ while True:
     for x in range(3):
         time.sleep(5)
         # Attempt to get sensor reading.
-        t.append(dhtDevice.temperature)
-        h.append(dhtDevice.humidity)
+        try: 
+            t.append(dhtDevice.temperature)
+        except Exception as ex:
+            print("Error.. ignoring:",ex)
+        try:
+            h.append(dhtDevice.humidity)
+        except Exception as ex:
+            print("Error.. ignoring:",ex)
     temp=sum(t)/len(t)
     humidity=sum(h)/len(h)
 

@@ -10,10 +10,10 @@ sleeptime = 1
  
 # the one-wire input pin will be declared and the integrated pullup-resistor will be enabled
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
  
 # After the enabling of the pullup-resistor you have to wait till the communication with the DS18B20 sensor has started
-print 'wait for initialisation...'
+print('wait for initialisation...')
  
 base_dir = '/sys/bus/w1/devices/'
 while True:
@@ -56,8 +56,8 @@ def TemperaturAuswertung():
 # The break time can be configured by the variable "sleeptime"
 try:
     while True:
-        print '---------------------------------------'
-        print "Temperature:", TemperaturAuswertung(), "°C"
+        print('---------------------------------------')
+        print("Temperature:", TemperaturAuswertung(), "°C")
         time.sleep(sleeptime)
  
 except KeyboardInterrupt:

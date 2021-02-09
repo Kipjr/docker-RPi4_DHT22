@@ -1,4 +1,7 @@
-RPI.GPIO
+setuptools
+adafruit-python-shell
 adafruit-circuitpython-dht
+adafruit-blinka 
+Adafruit-PlatformDetect
 gspread
 oauth2client
